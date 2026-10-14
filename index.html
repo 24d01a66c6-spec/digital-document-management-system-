@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Document Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Digital Document Management System</h1>
+      <p>Upload, organize and find your documents in one place.</p>
+    </header>
+    <section class="card">
+      <h2>Add a document</h2>
+      <form id="uploadForm">
+        <label>Document title<input name="title" required maxlength="120" placeholder="e.g. Project Report"></label>
+        <label>Category<select name="category" required>
+          <option value="">Choose category</option><option>Academic</option><option>Office</option><option>Personal</option><option>Other</option>
+        </select></label>
+        <label>Select file (maximum 5 MB)<input name="document" type="file" accept=".pdf,.doc,.docx,.txt,.png,.jpg,.jpeg" required></label>
+        <button type="submit">Upload Document</button><p id="message" role="status"></p>
+      </form>
+    </section>
+    <section class="card">
+      <h2>My documents</h2>
+      <input id="search" type="search" placeholder="Search title, category or filename">
+      <div id="documentList" aria-live="polite"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
